@@ -15,7 +15,7 @@ int main(void)
 	ILI9341_Init();
 
 	ILI9341_Fill(ILI9341_COLOR_BLUE);
-	ILI9341_Puts(0,0,"LCD string test",&MY_Font_7x10,ILI9341_COLOR_WHITE,ILI9341_COLOR_BLUE);
+	ILI9341_Puts(0,0,"LCD string test",&MY_Font_11x18,ILI9341_COLOR_WHITE,ILI9341_COLOR_BLUE);
 	while(1) 
 	{	
 		LED_GREEN_ON();
