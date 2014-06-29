@@ -21,6 +21,7 @@ int main(void)
 	ILI9341_Puts(0,0,"LCD string test",&MY_Font_11x18,ILI9341_COLOR_WHITE,ILI9341_COLOR_BLUE);
 	while(1) 
 	{	
+		my_printf("It's usart1 test! \r\n");		
 		LED_GREEN_ON();
 		LED_RED_OFF();		
 		delay(800000);
