@@ -42,12 +42,14 @@ USER_LIB=../../User_Lib
 
 #User Source Files
 SRC+=	./main.c \
-	$(HARDWARE)/LED/led.c
-
+	$(HARDWARE)/LED/led.c \
+	$(HARDWARE)/ILI9341/ili9341.c \
+	$(PERIPHERAL)/spi5/spi5.c
 #User Header Files
 CFLAGS_INCLUDE+=-I./ \
-		-I$(HARDWARE)/LED
-
+		-I$(HARDWARE)/LED \
+		-I$(HARDWARE)/ILI9341 \
+		-I$(PERIPHERAL)/spi5
 #============================================================================# 
 CFLAGS_DEFINE= \
         -D USE_STDPERIPH_DRIVER \
