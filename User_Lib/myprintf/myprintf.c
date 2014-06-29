@@ -6,7 +6,7 @@ static putcf stdout_putf;
 static void* stdout_putp;
 
 #define UNUSED(p) ((p)=(p))
-#define PRINT_PORT USART2
+#define PRINT_PORT USART1
 void myputc ( void* p, char c)
 	{
 		UNUSED(p);		
