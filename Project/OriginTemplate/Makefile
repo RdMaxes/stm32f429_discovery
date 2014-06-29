@@ -110,14 +110,9 @@ clean:
 #Make flash
 flash:
 	st-flash write $(BIN_IMAGE) 0x8000000
-
 #Make cgdb
 cgdb:
 	cgdb -d $(GDB) -x ./st_util_init.gdb
-
-#Make gdbtui
-gdbtui:
-	$(GDB) -tui -x ./st_util_init.gdb
 #Make gdbauto
 gdbauto: cgdb
 #automatically formate
