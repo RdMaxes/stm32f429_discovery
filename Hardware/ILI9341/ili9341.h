@@ -89,7 +89,49 @@
 #define ILI9341_INTERFACE			0xF6
 #define ILI9341_PRC				0xF7
 
+/**
+ * Public enum
+ *
+ * Select orientation for LCD
+ */
+typedef enum {
+	ILI9341_Orientation_Portrait_1,
+	ILI9341_Orientation_Portrait_2,
+	ILI9341_Orientation_Landscape_1,
+	ILI9341_Orientation_Landscape_2
+} ILI9341_Orientation_t;
+
+/**
+ * Orientation
+ * Used private
+ */
+typedef enum {
+	ILI9341_Landscape,
+	ILI9341_Portrait
+} ILI9341_Orientation;
+
+/**
+ * LCD options
+ * Used private
+ */
+typedef struct {
+	uint16_t width;
+	uint16_t height;
+	ILI9341_Orientation orientation; // 1 = portrait; 0 = landscape
+} ILI931_Options_t;
+
 //function declaration
-
-
+extern void ILI9341_Init(void);
+extern void ILI9341_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
+extern void ILI9341_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
+extern void ILI9341_Fill(uint16_t color);
+extern void ILI9341_Rotate(TM_ILI9341_Orientation_t orientation);
+extern void ILI9341_Putc(uint16_t x, uint16_t y, char c, TM_FontDef_t *font, uint16_t foreground, uint16_t background);
+extern void ILI9341_Puts(uint16_t x, uint16_t y, char *str, TM_FontDef_t *font, uint16_t foreground, uint16_t background);
+extern void ILI9341_GetStringSize(char *str, TM_FontDef_t *font, uint16_t *width, uint16_t *height);
+extern void ILI9341_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+extern void ILI9341_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+extern void ILI9341_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+extern void ILI9341_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
+extern void ILI9341_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
 #endif
