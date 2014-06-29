@@ -12,6 +12,7 @@ static void delay(int32_t time)
 int main(void)
 {	
 	LED_Init();
+	ILI9341_Init();
 	while(1) 
 	{
 		LED_GREEN_ON();
