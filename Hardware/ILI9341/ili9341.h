@@ -111,9 +111,15 @@ typedef enum {
 } ILI9341_Orientation;
 
 /**
+ * Select font
+ */
+extern MY_FontDef_t MY_Font_7x10;
+extern MY_FontDef_t MY_Font_11x18;
+/**
  * LCD options
  * Used private
  */
+
 typedef struct {
 	uint16_t width;
 	uint16_t height;
@@ -126,9 +132,9 @@ extern void ILI9341_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uin
 extern void ILI9341_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
 extern void ILI9341_Fill(uint16_t color);
 extern void ILI9341_Rotate(ILI9341_Orientation_t orientation);
-extern void ILI9341_Putc(uint16_t x, uint16_t y, char c, FontDef_t *font, uint16_t foreground, uint16_t background);
-extern void ILI9341_Puts(uint16_t x, uint16_t y, char *str, FontDef_t *font, uint16_t foreground, uint16_t background);
-extern void ILI9341_GetStringSize(char *str, FontDef_t *font, uint16_t *width, uint16_t *height);
+extern void ILI9341_Putc(uint16_t x, uint16_t y, char c, MY_FontDef_t *font, uint16_t foreground, uint16_t background);
+extern void ILI9341_Puts(uint16_t x, uint16_t y, char *str, MY_FontDef_t *font, uint16_t foreground, uint16_t background);
+extern void ILI9341_GetStringSize(char *str, MY_FontDef_t *font, uint16_t *width, uint16_t *height);
 extern void ILI9341_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 extern void ILI9341_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 extern void ILI9341_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);

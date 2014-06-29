@@ -1,5 +1,5 @@
-#include "myfont.h"
 #include "stm32f4xx.h"
+#include "myfont.h"
 
 const uint16_t MY_Font7x10 [] = {
 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,  // sp

@@ -1,7 +1,8 @@
 #include <stm32f4xx.h>
+#include "myfont.h"
 #include "ili9341.h"
 #include "spi5.h"
-#include "myfont.h"
+
 //private called functions
 void ILI9341_SendData(uint8_t data);
 void ILI9341_SendCommand(uint8_t data);
@@ -276,6 +277,9 @@ void ILI9341_GetStringSize(char *str, MY_FontDef_t *font, uint16_t *width, uint1
 
 void ILI9341_Putc(uint16_t x, uint16_t y, char c, MY_FontDef_t *font, uint16_t foreground, uint16_t background) {
 	uint32_t i, b, j;
+
+	ILI9341_x = x;
+	ILI9341_y = y;	
 	if ((ILI9341_x + font->FontWidth) > ILI9341_Opts.width) {
 		//If at the end of a line of display, go to new line and set x to 0 position
 		ILI9341_y += font->FontHeight;
