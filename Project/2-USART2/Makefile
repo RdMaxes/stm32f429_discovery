@@ -46,7 +46,8 @@ SRC+=	./main.c \
 	$(HARDWARE)/ILI9341/ili9341.c \
 	$(PERIPHERAL)/spi5/spi5.c \
 	$(USER_LIB)/myfont/myfont.c \
-	$(PERIPHERAL)/usart2/usart2.c
+	$(PERIPHERAL)/usart2/usart2.c \
+	$(USER_LIB)/myprintf/myprintf.c
 
 #User Header Files
 CFLAGS_INCLUDE+=-I./ \
@@ -54,7 +55,8 @@ CFLAGS_INCLUDE+=-I./ \
 		-I$(HARDWARE)/ILI9341 \
 		-I$(PERIPHERAL)/spi5 \
 		-I$(USER_LIB)/myfont \
-		-I$(PERIPHERAL)/usart2
+		-I$(PERIPHERAL)/usart2 \
+		-I$(USER_LIB)/myprintf
 #============================================================================# 
 CFLAGS_DEFINE= \
         -D USE_STDPERIPH_DRIVER \
