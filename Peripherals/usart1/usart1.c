@@ -36,7 +36,7 @@ void DMA2_usart1_Config(void)
 //usart1 send data via DMA
 //@ int8_t *buf: data buffer ready to send
 //@ int16_t len: data length
-void usart1_DMA_send(int8_t *buf, int16_t len)
+void Usart1_DMA_Send(int8_t *buf, int16_t len)
 {  
     DMA_InitTypeDef DMA_InitStructure;
     //wait unitl last package is sent
@@ -67,7 +67,7 @@ void usart1_DMA_send(int8_t *buf, int16_t len)
 //usart1 configuration
 //default setting is 8,n,1
 //@ int baudrate: the desired baudrate
-void usart1_init(int baudrate)
+void Usart1_Init(int baudrate)
 {
 	GPIO_InitTypeDef GPIO_InitStruct;
 	USART_InitTypeDef USART_InitStruct;
