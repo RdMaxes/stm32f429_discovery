@@ -16,6 +16,7 @@ int main(void)
 	LED_Init();
 	ILI9341_Init();
 	Usart1_Init(9600);
+	Myprintf_Init(0x00,myputc);
 
 	ILI9341_Puts(0,0,"LCD string test",&MY_Font_11x18,ILI9341_COLOR_WHITE,ILI9341_COLOR_BLUE);
 	while(1) 
