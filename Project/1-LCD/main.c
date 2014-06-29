@@ -1,5 +1,8 @@
 #include <stm32f4xx.h>
 #include "led.h"
+#include "myfont.h"
+#include "ili9341.h"
+
 
 static void delay(int32_t time)
 {
