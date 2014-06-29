@@ -111,10 +111,6 @@ clean:
 flash:
 	st-flash write $(BIN_IMAGE) 0x8000000
 
-#Make openocd
-openocd: flash
-	openocd -f ../debug/openocd.cfg
-
 #Make cgdb
 cgdb:
 	cgdb -d $(GDB) -x ./st_util_init.gdb
