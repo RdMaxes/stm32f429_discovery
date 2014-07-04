@@ -112,7 +112,8 @@ void Usart1_Init(int baudrate)
 void USART1_IRQHandler(void)
 {
 	// check if the USART1 receive interrupt flag was set
-	if( USART_GetITStatus(USART1, USART_IT_RXNE) )
+	if(USART_GetITStatus(USART1, USART_IT_RXNE))
+	{
 		{
 			char t = USART1->DR;
 			while (USART_GetFlagStatus(USART1,USART_FLAG_TC)==RESET) ;
