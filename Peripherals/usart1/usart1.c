@@ -107,3 +107,14 @@ void Usart1_Init(int baudrate)
 	NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0;
 	NVIC_Init(&NVIC_InitStruct);	
 }
+
+//usart1 IRQ Handler
+void USART1_IRQHandler(void)
+{
+	// check if the USART1 receive interrupt flag was set
+	if( USART_GetITStatus(USART1, USART_IT_RXNE) )
+		{
+			char t = USART1->DR;
+		}
+	}
+}
