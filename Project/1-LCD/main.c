@@ -24,7 +24,8 @@ int main(void)
 	strcpy(str1,str2);
 
 	while(1) 
-	{		
+	{	
+		my_printf(str1);	
 		LED_GREEN_ON();
 		LED_RED_OFF();		
 		delay(800000);
