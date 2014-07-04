@@ -115,6 +115,8 @@ void USART1_IRQHandler(void)
 	if( USART_GetITStatus(USART1, USART_IT_RXNE) )
 		{
 			char t = USART1->DR;
+			while (USART_GetFlagStatus(USART1,USART_FLAG_TC)==RESET) ;
+			USART1->DR = t;			
 		}
 	}
 }
